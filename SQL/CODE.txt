@@ -1,0 +1,68 @@
+Create DATABASE Tenant
+Create database demo
+use tenant
+
+CREATE TABLE Tenancy_histories(
+id int IDENTITY,
+profile_id int,
+house_id int,
+move_in_date date,
+move_out_date date,
+rent int,
+Bed_type varchar(255),
+move_out_reason varchar(255)
+);
+
+CREATE TABLE Profiles(
+ profile_id int IDENTITY,
+ first_name varchar(255),
+ last_name varchar(255),
+ email varchar(255),
+ phone varchar(255),
+ city varchar(255),
+ pan_card varchar(255),
+ created_at date,
+ gender varchar(255),
+ referral_code varchar(255),
+ martial_status varchar(255)
+);
+
+CREATE TABLE Houses(
+house_id int IDENTITY,
+house_type varchar(255),
+bhk_details varchar(255),
+bed_count int,
+furnishing_type varchar(255),
+Beds_vacant int
+);
+
+
+CREATE TABLE Addresses(
+ad_id int IDENTITY,
+name varchar(255),
+description text,
+pincode int,
+city varchar(255),
+house_id int
+);
+
+CREATE TABLE Referrals(
+ref_id int IDENTITY,
+referrer_id int,
+referrer_bonus_amount float,
+referrer_valid tinyint,
+valid_from date,
+valid_till date
+
+);
+
+
+CREATE TABLE Employment_details(
+id int IDENTITY,
+profile_id int,
+latest_employer varchar(255),
+official_mail_id varchar(255),
+yrs_experience int,
+Occupational_category varchar(255)
+
+);
